@@ -1141,10 +1141,6 @@ SQLITE_API int WINAPI sqlite3_cursor_rowid_interop(sqlite3_stmt *pstmt, int curs
 #include "../ext/fts5.c"
 #endif
 
-#if defined(INTEROP_JSON1_EXTENSION)
-#include "../ext/json1.c"
-#endif
-
 #if defined(INTEROP_PERCENTILE_EXTENSION)
 #include "../ext/percentile.c"
 #endif
