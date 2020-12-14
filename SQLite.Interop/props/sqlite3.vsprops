@@ -34,7 +34,7 @@
 	/>
 	<UserMacro
 		Name="SQLITE_WINCE_200X_DEFINES"
-		Value="SQLITE_OMIT_WAL=1"
+		Value=""
 		PerformEnvironmentSet="true"
 	/>
 	<UserMacro
