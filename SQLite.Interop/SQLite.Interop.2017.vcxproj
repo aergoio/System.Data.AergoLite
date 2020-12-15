@@ -155,7 +155,7 @@
       <PreprocessorDefinitions>_DEBUG;INTEROP_RC_VERSION=$(INTEROP_RC_VERSION);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Link>
-      <AdditionalOptions>$(INTEROP_ASSEMBLY_RESOURCES) %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/verbose:lib $(INTEROP_ASSEMBLY_RESOURCES) %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>$(INTEROP_LIBRARY_DIRECTORIES)</AdditionalLibraryDirectories>
       <AdditionalDependencies>$(ProjectDir)..\bin\$(ConfigurationYear)\$(Configuration)Module\bin\System.Data.SQLite.netmodule;$(INTEROP_LIBRARY_DEPENDENCIES);%(AdditionalDependencies)</AdditionalDependencies>
       <Version>$(INTEROP_LINKER_VERSION)</Version>
