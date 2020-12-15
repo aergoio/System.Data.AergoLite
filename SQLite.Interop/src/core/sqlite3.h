@@ -11713,6 +11713,8 @@ struct fts5_api {
 ** AERGOLITE API
 */
 
+#if 0
+
 #ifndef AERGOLITE_API
 #define AERGOLITE_API
 #endif
@@ -12073,6 +12075,9 @@ AERGOLITE_API void aergolite_debug_exit_thread();
 
 #define BODY_MOD_PAGES  0x21
 #define BODY_TXN_IDS    0x22
+
+
+#endif
 
 
 /*
