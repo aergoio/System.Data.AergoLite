@@ -5,8 +5,8 @@ on: [push]
 env:
   # Path to the solution file relative to the root of the project.
   #SOLUTION_FILE_PATH: .\SQLite.NET.2017.MSBuild.sln
-  #SOLUTION_FILE_PATH: .\SQLite.Interop\SQLite.Interop.Static.2017.vcxproj
-  SOLUTION_FILE_PATH: .\SQLite.Interop\SQLite.Interop.2017.vcxproj
+  SOLUTION_FILE_PATH: .\SQLite.Interop\SQLite.Interop.Static.2017.vcxproj
+  #SOLUTION_FILE_PATH: .\SQLite.Interop\SQLite.Interop.2017.vcxproj
 
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
@@ -33,6 +33,18 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: msbuild /m /p:Configuration=ReleaseNativeOnly /p:Platform=x64 ${{env.SOLUTION_FILE_PATH}}
 
+    - name: list dependencies
+      shell: cmd
+      run: dumpbin /dependents bin\2017\Release\bin\x64\SQLite.Interop.dll
+
     #- name: Build Win32
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
     #  run: msbuild /m /p:Configuration=ReleaseNativeOnly /p:Platform=Win32 ${{env.SOLUTION_FILE_PATH}}
+
+    - name: upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: SQLite.Interop.dll
+        path: |
+          bin\2017\Release\bin\x64\SQLite.Interop.dll
+          bin\2017\Release\bin\x64\SQLite.Interop.lib
